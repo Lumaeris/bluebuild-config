@@ -31,6 +31,11 @@ modules:
       - https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_x86_64.rpm
       - codium
       - gnome-boxes
+      - qt6-qtquickcontrols2
+      - qt6-qtsvg
+  
+  - type: script
+    scripts:
+      - applycatppuccinsddm.sh
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
-
