@@ -14,14 +14,13 @@ image-version: latest # latest is also supported if you want new updates ASAP
 modules:
   - type: rpm-ostree
     repos:
-      - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+      - https://repo.librewolf.net/librewolf.repo
     keys:
-      - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+      - https://repo.librewolf.net/pubkey.gpg
     optfix:
-      - brave.com
       - Filen
     install:
-      - brave-browser
+      - librewolf
       - https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_x86_64.rpm
       - codium
 
