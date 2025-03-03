@@ -1,19 +1,32 @@
-# BlueBuild Template &nbsp; [![bluebuild build badge](https://github.com/blue-build/template/actions/workflows/build.yml/badge.svg)](https://github.com/blue-build/template/actions/workflows/build.yml)
+# Lumaeris' BlueBuild Config &nbsp; [![bluebuild build badge](https://github.com/Lumaeris/bluebuild-config/actions/workflows/build.yml/badge.svg)](https://github.com/Lumaeris/bluebuild-config/actions/workflows/build.yml)
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+This repository contains a recipe for [BlueBuild](https://blue-build.org/) that does a build based on my preferences everyday.
 
-After setup, it is recommended you update this README to describe your custom image.
+This is based on the [Universal Blue's](https://universal-blue.org/) [`bazzite-nvidia-open`](https://github.com/ublue-os/bazzite/pkgs/container/bazzite-nvidia-open) and [`bazzite-deck`](https://github.com/ublue-os/bazzite/pkgs/container/bazzite-deck) images, the first one contains NVIDIA driver with open-source modules that only supports NVIDIA RTX or NVIDIA GTX 16xx+ Series and the second one contains specific changes for Steam Deck. Not recommended for use as is, while still allowing you to explore this repository.
+
+See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on BlueBuild's template.
+
+## List of packages
+### Added
+| Name | Repo | Present on main | Present on deck |
+| --- | --- | --- | --- |
+| [LibreWolf](https://librewolf.net) | [Official](https://librewolf.net/installation/fedora/) | ✅ | ✅ |
+| [OnlyOffice Desktop Editors](https://www.onlyoffice.com/desktop.aspx) | [Official](https://helpcenter.onlyoffice.com/installation/desktop-install-rhel.aspx#InstallRepo) | ✅ | ❌ |
+| [VSCodium](https://vscodium.com) | Unofficial, [`terra`](https://terra.fyralabs.com/) | ✅ | ✅ |
+| [Filen](https://filen.io) | N/A, [directly from a file](https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_x86_64.rpm) (https://filen.io/products/desktop) | ✅ | ✅ |
+| [GNOME Boxes](https://apps.gnome.org/Boxes/) | Possibly official, `fedora` | ✅ | ❌ |
+| [IBM Semeru (OpenJDK JRE Runtime)](https://developer.ibm.com/languages/java/semeru-runtimes/) | N/A, directly from a file (https://github.com/ibmruntimes/semeru21-binaries/releases/latest) | ✅ | ✅ |
 
 ## Installation
 
-> [!WARNING]  
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
+> [!NOTE]  
+> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable). Works fine if using Bazzite's official ISOs as a starting point.
 
-To rebase an existing atomic Fedora installation to the latest build:
+To rebase an existing atomic Fedora installation to the latest build of `bazzite-nvidia-open` (main):
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/blue-build/template:latest
+  rpm-ostree rebase ostree-unverified-registry:ghcr.io/lumaeris/bazzite-nvidia-open:latest
   ```
 - Reboot to complete the rebase:
   ```
@@ -21,14 +34,33 @@ To rebase an existing atomic Fedora installation to the latest build:
   ```
 - Then rebase to the signed image, like so:
   ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/blue-build/template:latest
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/lumaeris/bazzite-nvidia-open:latest
   ```
 - Reboot again to complete the installation
   ```
   systemctl reboot
   ```
 
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+And for rebasing to the latest build of `bazzite-deck` (deck):
+
+- First rebase to the unsigned image, to get the proper signing keys and policies installed:
+  ```
+  rpm-ostree rebase ostree-unverified-registry:ghcr.io/lumaeris/bazzite-deck:latest
+  ```
+- Reboot to complete the rebase:
+  ```
+  systemctl reboot
+  ```
+- Then rebase to the signed image, like so:
+  ```
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/lumaeris/bazzite-deck:latest
+  ```
+- Reboot again to complete the installation
+  ```
+  systemctl reboot
+  ```
+
+The `latest` tag will automatically point to the latest build.
 
 ## ISO
 
@@ -39,5 +71,16 @@ If build on Fedora Atomic, you can generate an offline ISO with the instructions
 These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
 
 ```bash
-cosign verify --key cosign.pub ghcr.io/blue-build/template
+cosign verify --key cosign.pub ghcr.io/lumaeris/bazzite-nvidia-open
+cosign verify --key cosign.pub ghcr.io/lumaeris/bazzite-deck
 ```
+
+<p align="center">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Lumaeris/Lumaeris/refs/heads/main/assets/footer-white.png">
+        <img alt="Lumaeris" width="600px" src="https://raw.githubusercontent.com/Lumaeris/Lumaeris/refs/heads/main/assets/footer-dark.png">
+    </picture>
+</p>
+<p align="center">
+    <a href="https://github.com/Lumaeris/bluebuild-config/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache--2.0-ED592F?style=for-the-badge&logo=apache"/></a>
+</p>
