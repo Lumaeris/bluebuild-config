@@ -35,6 +35,7 @@ modules:
   - type: script
     scripts:
       - applycatppuccinsddm.sh
+      - librewolfnativemessaging.sh
 
   - type: systemd
     system:
