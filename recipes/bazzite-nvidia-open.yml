@@ -12,6 +12,10 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
+  - type: script
+    scripts:
+      - disableterrarepo.sh
+
   - type: rpm-ostree # we have to install this package separately in order to install onlyoffice
     install:
       - https://download.onlyoffice.com/repo/centos/main/noarch/onlyoffice-repo.noarch.rpm
@@ -20,8 +24,10 @@ modules:
     repos:
       - https://repo.librewolf.net/librewolf.repo
       - https://copr.fedorainfracloud.org/coprs/liusen/nekoray/repo/fedora-%OS_VERSION%/liusen-nekoray-fedora-%OS_VERSION%.repo # when including COPR repos, use the %OS_VERSION% magic string
+      - vscodium.repo
     keys:
       - https://repo.librewolf.net/pubkey.gpg
+      - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
     optfix:
       - Filen
       - onlyoffice
