@@ -15,6 +15,7 @@ modules:
   - type: script
     scripts:
       - disableterrarepo.sh
+      - librewolfnativemessaging.sh
 
   - type: rpm-ostree # we have to install this package separately in order to install onlyoffice
     install:
@@ -39,6 +40,7 @@ modules:
       - gnome-boxes
       - https://github.com/ibmruntimes/semeru21-binaries/releases/download/jdk-21.0.6%2B7_openj9-0.49.0/ibm-semeru-open-21-jre-21.0.6.7_0.49.0-1.x86_64.rpm
       - nekoray
+      - plasma-browser-integration
     remove:
       - waydroid
       - waydroid-selinux
@@ -46,7 +48,6 @@ modules:
   - type: script
     scripts:
       - applycatppuccinsddm.sh
-      - librewolfnativemessaging.sh
       - removewaydroid.sh
 
   - type: systemd
