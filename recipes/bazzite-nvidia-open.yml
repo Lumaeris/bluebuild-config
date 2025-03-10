@@ -32,6 +32,7 @@ modules:
     optfix:
       - Filen
       - onlyoffice
+      - adguard-cli
     install:
       - librewolf
       - onlyoffice-desktopeditors
@@ -48,6 +49,8 @@ modules:
     scripts:
       - applycatppuccinsddm.sh
       - removewaydroid.sh
+    snippets:
+      - "curl -fsSL https://raw.githubusercontent.com/AdguardTeam/AdGuardCLI/nightly/install.sh | sh -s -- -v"
 
   - type: systemd
     system:
