@@ -14,7 +14,6 @@ image-version: latest # latest is also supported if you want new updates ASAP
 modules:
   - type: script
     scripts:
-      - disableterrarepo.sh
       - librewolfnativemessaging.sh
 
   - type: rpm-ostree # we have to install this package separately in order to install onlyoffice
