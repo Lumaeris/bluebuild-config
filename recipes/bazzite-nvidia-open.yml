@@ -12,6 +12,10 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
+  - type: script
+    scripts:
+      - disableterrarepo.sh
+
   - type: rpm-ostree # we have to install this package separately in order to install onlyoffice
     install:
       - https://download.onlyoffice.com/repo/centos/main/noarch/onlyoffice-repo.noarch.rpm
