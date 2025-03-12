@@ -10,9 +10,6 @@ See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup i
 ### Added
 | Name | Repo | Present on main | Present on deck |
 | --- | --- | --- | --- |
-| [LibreWolf](https://librewolf.net) | [Official](https://librewolf.net/installation/fedora/) | ✅ | ✅ |
-| [OnlyOffice Desktop Editors](https://www.onlyoffice.com/desktop.aspx) | [Official](https://helpcenter.onlyoffice.com/installation/desktop-install-rhel.aspx#InstallRepo) | ✅ | ❌ |
-| [VSCodium](https://vscodium.com) | [Official](https://vscodium.com/#install-on-fedora-rhel-centos-rockylinux-opensuse-rpm-package) | ✅ | ✅ |
 | [Filen](https://filen.io) | N/A, [directly from a file](https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_x86_64.rpm) (https://filen.io/products/desktop) | ✅ | ✅ |
 | [GNOME Boxes](https://apps.gnome.org/Boxes/) | Possibly official, `fedora` | ✅ | ❌ |
 | [IBM Semeru (OpenJDK JRE Runtime)](https://developer.ibm.com/languages/java/semeru-runtimes/) | N/A, directly from a file (https://github.com/ibmruntimes/semeru21-binaries/releases/latest) | ✅ | ✅ |
