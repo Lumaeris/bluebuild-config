@@ -1,6 +1,6 @@
 # Lumaeris' BlueBuild Config &nbsp; [![bluebuild build badge](https://github.com/Lumaeris/bluebuild-config/actions/workflows/build.yml/badge.svg)](https://github.com/Lumaeris/bluebuild-config/actions/workflows/build.yml)
 
-This repository contains a recipe for [BlueBuild](https://blue-build.org/) that does a build based on my preferences everyday.
+This repository contains a recipe for [BlueBuild](https://blue-build.org/) that does a build based on my preferences.
 
 This is based on the [Universal Blue's](https://universal-blue.org/) [`bazzite-nvidia-open`](https://github.com/ublue-os/bazzite/pkgs/container/bazzite-nvidia-open) and [`bazzite-deck`](https://github.com/ublue-os/bazzite/pkgs/container/bazzite-deck) images, the first one contains NVIDIA driver with open-source modules that only supports NVIDIA RTX or NVIDIA GTX 16xx+ Series and the second one contains specific changes for Steam Deck. Not recommended for use as is, while still allowing you to explore this repository.
 
