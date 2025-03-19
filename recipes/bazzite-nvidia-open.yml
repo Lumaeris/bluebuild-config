@@ -29,6 +29,7 @@ modules:
   - type: script
     scripts:
       - removewaydroid.sh
+      - applycatppuccinsddm.sh
 
   - type: systemd
     system:
