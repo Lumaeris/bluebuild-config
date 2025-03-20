@@ -12,6 +12,11 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
+  - type: files
+    files:
+      - source: system/usr/bin
+        destination: /usr/bin
+
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/liusen/nekoray/repo/fedora-%OS_VERSION%/liusen-nekoray-fedora-%OS_VERSION%.repo # when including COPR repos, use the %OS_VERSION% magic string
