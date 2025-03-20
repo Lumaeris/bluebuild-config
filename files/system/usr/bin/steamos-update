@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+# I tried to make some changes so I could safely upgrade the system via Steam's Gaming Mode, but after some failed attempts to do so I realized it was pointless and that's where I gave up.
+# This script will force an error with code 7, this lets Steam know that the system has no updates, when in reality it may be different.
+# There may be another way using only rpm-ostree, but I'll limit myself to that for now.
+
+exit 7
