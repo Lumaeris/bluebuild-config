@@ -10,6 +10,7 @@ See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup i
 ### Added
 | Name | Repo | Present on main | Present on deck |
 | --- | --- | --- | --- |
+| [`steamos-update` via rpm-ostree](files/system/deck/usr/bin/steamos-update) | This repo, [based on Bazzite's script](https://github.com/ublue-os/bazzite/blob/main/system_files/deck/shared/usr/bin/steamos-update) | ❌ | ✅ |
 | [Filen](https://filen.io) | N/A, [directly from a file](https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_x86_64.rpm) (https://filen.io/products/desktop) | ✅ | ✅ |
 | [GNOME Boxes](https://apps.gnome.org/Boxes/) | Possibly official, `fedora` | ✅ | ❌ |
 | [IBM Semeru (OpenJDK JRE Runtime)](https://developer.ibm.com/languages/java/semeru-runtimes/) | N/A, directly from a file (https://github.com/ibmruntimes/semeru21-binaries/releases/latest) | ✅ | ✅ |

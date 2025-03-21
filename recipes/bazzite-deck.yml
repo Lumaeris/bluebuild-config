@@ -18,8 +18,8 @@ modules:
 
   - type: files
     files:
-      - source: system/usr/bin
-        destination: /usr/bin
+      - source: system/deck
+        destination: /
 
   - type: rpm-ostree
     optfix:

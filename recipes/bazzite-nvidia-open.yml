@@ -14,8 +14,8 @@ image-version: latest # latest is also supported if you want new updates ASAP
 modules:
   - type: files
     files:
-      - source: system/usr/bin
-        destination: /usr/bin
+      - source: system/main
+        destination: /
 
   - type: rpm-ostree
     repos:
