@@ -1,6 +1,67 @@
 #!/usr/bin/bash
-# I tried to make some changes so I could safely upgrade the system via Steam's Gaming Mode, but after some failed attempts to do so I realized it was pointless and that's where I gave up.
-# This script will force an error with code 7, this lets Steam know that the system has no updates, when in reality it may be different.
-# There may be another way using only rpm-ostree, but I'll limit myself to that for now.
+# based on https://github.com/ublue-os/bazzite/blob/main/system_files/deck/shared/usr/bin/steamos-update, this time using rpm-ostree
 
-exit 7
+# The Steam client is known to call this script with the following parameter combinations:
+# steamos-update --supports-duplicate-detection     -- should do nothing
+# steamos-update --enable-duplicate-detection check -- should check for update
+# steamos-update check                              -- should check for update
+# steamos-update --enable-duplicate-detection       -- should perform an update
+# steamos-update                                    -- should perform an update
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        check)
+            CHECK=1
+            shift
+            ;;
+        --supports-duplicate-detection)
+            EXIT=1
+            shift
+            ;;
+        *)
+            shift
+            ;;
+    esac
+done
+
+if [ -n "${CHECK}" ]; then
+    # Perform connectivity check
+    wget -q --spider https://github.com
+    if [ $? -eq 0 ]; then
+        # Check system state
+        rpm-ostree upgrade --check
+        if [ $? -eq 0 ]; then
+            exit 0 # Upgrade available
+        else
+            exit 7 # Checks failed, or upgrade not available
+        fi
+    else
+        exit 7 # Connectivity check failed
+    fi
+elif [ -n "${EXIT}" ]; then
+    exit 0
+else
+    # Fake upgrade progress bar
+    fake_progress() {
+        local value=0
+        while [ ! -f '/tmp/upgrade-check' ]; do
+            sleep 12
+            if [ ${value} -lt '100' ]; then
+                echo ${value}'%'
+                value=$(( value + 1 ))
+            fi
+        done
+        echo 100%
+    }
+    upgrade() {
+        rpm-ostree upgrade >/dev/null
+        echo $? > /tmp/upgrade-check
+    }
+    upgrade | fake_progress
+    # Check if upgrade failed
+    UPGRADE_CHECK=$(cat /tmp/upgrade-check)
+    rm /tmp/upgrade-check
+    if [ ! "${UPGRADE_CHECK}" -eq 0 ]; then
+        exit 0 # Upgrade failed
+    fi
+fi
