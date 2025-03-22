@@ -45,6 +45,7 @@ modules:
     system:
       enabled:
         - tailscaled
+        - mullvad-daemon
       disabled:
         - ublue-update
 

@@ -15,6 +15,7 @@ See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup i
 | [GNOME Boxes](https://apps.gnome.org/Boxes/) | Possibly official, `fedora` | ✅ | ❌ |
 | [IBM Semeru (OpenJDK JRE Runtime)](https://developer.ibm.com/languages/java/semeru-runtimes/) | N/A, directly from a file (https://github.com/ibmruntimes/semeru21-binaries/releases/latest) | ✅ | ✅ |
 | [Nekoray](https://github.com/MatsuriDayo/nekoray) | Unofficial, [COPR](https://copr.fedorainfracloud.org/coprs/liusen/nekoray/) | ✅ | ❌ |
+| [Mullvad VPN](https://mullvad.net/en/vpn) | [Official](https://mullvad.net/en/download/vpn/linux) | ✅ | ✅ |
 
 ### Removed
 - [Waydroid](https://waydro.id), which doesn't work on NVIDIA hardware (only on main)
