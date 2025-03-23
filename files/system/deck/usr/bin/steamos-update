@@ -45,7 +45,7 @@ else
     fake_progress() {
         local value=0
         while [ ! -f '/tmp/upgrade-check' ]; do
-            sleep 6
+            sleep 9
             if [ ${value} -lt '100' ]; then
                 echo ${value}'%'
                 value=$(( value + 1 ))
