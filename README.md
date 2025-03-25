@@ -11,7 +11,6 @@ See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup i
 | Name | Repo | Present on main | Present on deck |
 | --- | --- | --- | --- |
 | [`steamos-update` via rpm-ostree](files/system/deck/usr/bin/steamos-update) | This repo, [based on Bazzite's script](https://github.com/ublue-os/bazzite/blob/main/system_files/deck/shared/usr/bin/steamos-update) | ❌ | ✅ |
-| [Filen](https://filen.io) | N/A, [directly from a file](https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_x86_64.rpm) (https://filen.io/products/desktop) | ✅ | ✅ |
 | [GNOME Boxes](https://apps.gnome.org/Boxes/) | Possibly official, `fedora` | ✅ | ❌ |
 | [Nekoray](https://github.com/MatsuriDayo/nekoray) | Unofficial, [COPR](https://copr.fedorainfracloud.org/coprs/liusen/nekoray/) | ✅ | ❌ |
 | [Mullvad VPN](https://mullvad.net/en/vpn) | [Official](https://mullvad.net/en/download/vpn/linux) | ✅ | ✅ |

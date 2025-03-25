@@ -24,10 +24,8 @@ modules:
     keys:
       - https://repository.mullvad.net/rpm/mullvad-keyring.asc
     optfix:
-      - Filen
       - "Mullvad VPN"
     install:
-      - https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_x86_64.rpm
       - gnome-boxes
       - nekoray
       - mullvad-vpn
