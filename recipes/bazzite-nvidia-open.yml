@@ -29,13 +29,9 @@ modules:
       - gnome-boxes
       - nekoray
       - mullvad-vpn
-    remove:
-      - waydroid
-      - waydroid-selinux
   
   - type: script
     scripts:
-      - removewaydroid.sh
       - applycatppuccinsddm.sh
 
   - type: systemd
