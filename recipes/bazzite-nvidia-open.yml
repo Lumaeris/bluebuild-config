@@ -19,15 +19,12 @@ modules:
 
   - type: rpm-ostree
     repos:
-      - https://copr.fedorainfracloud.org/coprs/liusen/nekoray/repo/fedora-%OS_VERSION%/liusen-nekoray-fedora-%OS_VERSION%.repo # when including COPR repos, use the %OS_VERSION% magic string
       - https://repository.mullvad.net/rpm/stable/mullvad.repo
     keys:
       - https://repository.mullvad.net/rpm/mullvad-keyring.asc
     optfix:
       - "Mullvad VPN"
     install:
-      - gnome-boxes
-      - nekoray
       - mullvad-vpn
     remove:
       - waydroid
