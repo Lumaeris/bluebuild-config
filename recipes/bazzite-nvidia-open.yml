@@ -34,6 +34,8 @@ modules:
     scripts:
       - removewaydroid.sh
       - applycatppuccinsddm.sh
+    snippets:
+      - "echo 'import \"/usr/share/ublue-os/just/65-lumaeris.just\"' >> /usr/share/ublue-os/justfile"
 
   - type: systemd
     system:
