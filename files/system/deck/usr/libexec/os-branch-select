@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+echo rel
+exit 0
