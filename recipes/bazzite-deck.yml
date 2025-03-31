@@ -38,6 +38,6 @@ modules:
         - tailscaled
         - mullvad-daemon
       disabled:
-        - ublue-update
+        - ublue-update.timer
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
