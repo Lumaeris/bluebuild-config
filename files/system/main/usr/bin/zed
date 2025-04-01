@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+# https://github.com/flathub/dev.zed.Zed/issues/3
+if grep -q 'ZED_FLATPAK_NO_ESCAPE=true' <<< $(/usr/bin/flatpak override dev.zed.Zed --user --show); then
+    /usr/bin/flatpak override dev.zed.Zed --env=ZED_FLATPAK_NO_ESCAPE=true --user
+fi
+/usr/bin/flatpak run dev.zed.Zed "$@"
