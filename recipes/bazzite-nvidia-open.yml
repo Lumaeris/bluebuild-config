@@ -20,12 +20,19 @@ modules:
   - type: rpm-ostree
     repos:
       - https://repository.mullvad.net/rpm/stable/mullvad.repo
+      - https://download.docker.com/linux/fedora/docker-ce.repo
     keys:
       - https://repository.mullvad.net/rpm/mullvad-keyring.asc
+      - https://download.docker.com/linux/fedora/gpg
     optfix:
       - "Mullvad VPN"
     install:
       - mullvad-vpn
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
     remove:
       - waydroid
       - waydroid-selinux
@@ -42,6 +49,7 @@ modules:
       enabled:
         - tailscaled
         - mullvad-daemon
+        - docker.socket
       disabled:
         - ublue-update.timer
 
