@@ -17,6 +17,10 @@ modules:
       - source: system/main
         destination: /
 
+  - type: script
+    scripts:
+      - installfdm.sh
+
   - type: rpm-ostree
     repos:
       - https://repository.mullvad.net/rpm/stable/mullvad.repo
@@ -35,7 +39,6 @@ modules:
     scripts:
       - removewaydroid.sh
       - applycatppuccinsddm.sh
-      - installfdm.sh
     snippets:
       - "echo 'import \"/usr/share/ublue-os/just/65-lumaeris.just\"' >> /usr/share/ublue-os/justfile"
 
