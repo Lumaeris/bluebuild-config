@@ -24,6 +24,7 @@ modules:
       - https://repository.mullvad.net/rpm/mullvad-keyring.asc
     optfix:
       - "Mullvad VPN"
+      - "freedownloadmanager"
     install:
       - mullvad-vpn
     remove:
@@ -34,6 +35,7 @@ modules:
     scripts:
       - removewaydroid.sh
       - applycatppuccinsddm.sh
+      - installfdm.sh
     snippets:
       - "echo 'import \"/usr/share/ublue-os/just/65-lumaeris.just\"' >> /usr/share/ublue-os/justfile"
 
