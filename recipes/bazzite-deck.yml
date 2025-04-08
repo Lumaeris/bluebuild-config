@@ -16,6 +16,7 @@ modules:
     snippets:
       - "rm /usr/bin/steamos-update"
       - "rm /usr/libexec/os-branch-select"
+      - "rm /usr/share/gamescope-session-plus/bootstrap_steam.tar.gz" # pretty big archive, which is only useful for the first boot, but not anymore
 
   - type: files
     files:
