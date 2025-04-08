@@ -12,14 +12,12 @@ See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup i
 | --- | --- | --- | --- |
 | [`steamos-update` via rpm-ostree](files/system/deck/usr/bin/steamos-update) | This repo, [based on Bazzite's script](https://github.com/ublue-os/bazzite/blob/main/system_files/deck/shared/usr/bin/steamos-update) | ❌ | ✅ |
 | [Mullvad VPN](https://mullvad.net/en/vpn) | [Official](https://mullvad.net/en/download/vpn/linux) | ✅ | ✅ |
+| [Free Download Manager](https://www.freedownloadmanager.org/) | N/A, [directly from file](https://www.freedownloadmanager.org/download-fdm-for-linux.htm) | ✅ | ❌ |
 
 ### Removed
 - [Waydroid](https://waydro.id), which doesn't work on NVIDIA hardware (only on main)
 
 ## Installation
-
-> [!NOTE]  
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable). Works fine if using Bazzite's official ISOs as a starting point.
 
 To rebase an existing atomic Fedora installation to the latest build of `bazzite-nvidia-open` (main):
 
@@ -27,17 +25,9 @@ To rebase an existing atomic Fedora installation to the latest build of `bazzite
   ```
   rpm-ostree rebase ostree-unverified-registry:ghcr.io/lumaeris/bazzite-nvidia-open:latest
   ```
-- Reboot to complete the rebase:
-  ```
-  systemctl reboot
-  ```
-- Then rebase to the signed image, like so:
+- Reboot, and complete the rebase to the signed image:
   ```
   rpm-ostree rebase ostree-image-signed:docker://ghcr.io/lumaeris/bazzite-nvidia-open:latest
-  ```
-- Reboot again to complete the installation
-  ```
-  systemctl reboot
   ```
 
 And for rebasing to the latest build of `bazzite-deck` (deck):
@@ -46,24 +36,12 @@ And for rebasing to the latest build of `bazzite-deck` (deck):
   ```
   rpm-ostree rebase ostree-unverified-registry:ghcr.io/lumaeris/bazzite-deck:latest
   ```
-- Reboot to complete the rebase:
-  ```
-  systemctl reboot
-  ```
-- Then rebase to the signed image, like so:
+- Reboot, and complete the rebase to the signed image:
   ```
   rpm-ostree rebase ostree-image-signed:docker://ghcr.io/lumaeris/bazzite-deck:latest
   ```
-- Reboot again to complete the installation
-  ```
-  systemctl reboot
-  ```
 
 The `latest` tag will automatically point to the latest build.
-
-## ISO
-
-If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
 
 ## Verification
 
