@@ -33,7 +33,6 @@ modules:
   - type: script
     scripts:
       - removewaydroid.sh
-      - applycatppuccinsddm.sh
       - installfdm.sh
     snippets:
       - "echo 'import \"/usr/share/ublue-os/just/65-lumaeris.just\"' >> /usr/share/ublue-os/justfile"
