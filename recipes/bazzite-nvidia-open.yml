@@ -44,5 +44,30 @@ modules:
         - mullvad-daemon
       disabled:
         - ublue-update.timer
+  
+  - type: default-flatpaks
+    notify: true
+    system:
+      install:
+        - io.gitlab.librewolf-community
+        - io.github.kukuruzka165.materialgram
+        - com.obsproject.Studio
+        - org.gnome.gitlab.somas.Apostrophe
+        - org.localsend.localsend_app
+        - com.vscodium.codium
+        - dev.zed.Zed
+        - com.usebottles.bottles
+        - com.spotify.Client
+        - org.qbittorrent.qBittorrent
+        - dev.vencord.Vesktop
+        - org.gimp.GIMP
+        - im.riot.Riot
+        - com.github.marhkb.Pods
+        - re.sonny.Commit
+        - org.onlyoffice.desktopeditors
+        - io.github.alainm23.planify
+      remove:
+        - org.mozilla.Firefox
+        - io.github.fastrizwaan.WineZGUI
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
