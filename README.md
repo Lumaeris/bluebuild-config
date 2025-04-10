@@ -13,6 +13,7 @@ See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup i
 | [`steamos-update` via rpm-ostree](files/system/deck/usr/bin/steamos-update) | This repo, [based on Bazzite's script](https://github.com/ublue-os/bazzite/blob/main/system_files/deck/shared/usr/bin/steamos-update) | ❌ | ✅ |
 | [Mullvad VPN](https://mullvad.net/en/vpn) | [Official](https://mullvad.net/en/download/vpn/linux) | ✅ | ✅ |
 | [Free Download Manager](https://www.freedownloadmanager.org/) | N/A, [directly from file](https://www.freedownloadmanager.org/download-fdm-for-linux.htm) | ✅ | ❌ |
+| [Docker Engine](https://docs.docker.com/engine/) | [Official](https://docs.docker.com/engine/install/fedora/) | ✅ | ❌ |
 
 ### Removed
 - [Waydroid](https://waydro.id), which doesn't work on NVIDIA hardware (only on main)
