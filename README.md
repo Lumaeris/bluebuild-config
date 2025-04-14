@@ -16,33 +16,43 @@ See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup i
 | [Docker Engine](https://docs.docker.com/engine/) | [Official](https://docs.docker.com/engine/install/fedora/) | ✅ | ❌ |
 
 ### Removed
-- [Waydroid](https://waydro.id), which doesn't work on NVIDIA hardware (only on main)
+- [Waydroid](https://waydro.id), which doesn't work on NVIDIA hardware (also removed for deck)
 
 ## Installation
 
 To rebase an existing atomic Fedora installation to the latest build of `bazzite-nvidia-open` (main):
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
-  ```
+  ```bash
   rpm-ostree rebase ostree-unverified-registry:ghcr.io/lumaeris/bazzite-nvidia-open:latest
   ```
 - Reboot, and complete the rebase to the signed image:
-  ```
+  ```bash
   rpm-ostree rebase ostree-image-signed:docker://ghcr.io/lumaeris/bazzite-nvidia-open:latest
   ```
 
 And for rebasing to the latest build of `bazzite-deck` (deck):
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
-  ```
+  ```bash
   rpm-ostree rebase ostree-unverified-registry:ghcr.io/lumaeris/bazzite-deck:latest
   ```
 - Reboot, and complete the rebase to the signed image:
-  ```
+  ```bash
   rpm-ostree rebase ostree-image-signed:docker://ghcr.io/lumaeris/bazzite-deck:latest
   ```
 
 The `latest` tag will automatically point to the latest build.
+
+After installation I install a few Flatpak applications (that I don't include in the images yet) and apply these commands:
+
+```bash
+ujust setup-virtualization # Enable Virtualization, Add $USER to libvirt group, Enable USB hot plugging
+
+ujust setup-spotify # also installs and configures spicetify automatically
+
+ujust install-resolve
+```
 
 ## Verification
 

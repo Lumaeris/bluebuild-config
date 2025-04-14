@@ -7,16 +7,14 @@ description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/bazzite-deck
-image-version: latest # latest is also supported if you want new updates ASAP
+image-version: stable
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
   - type: script
     snippets:
-      - "rm /usr/bin/steamos-update"
-      - "rm /usr/libexec/os-branch-select"
-      - "rm /usr/share/gamescope-session-plus/bootstrap_steam.tar.gz" # pretty big archive, which is only useful for the first boot, but not anymore
+      - "rm /usr/share/gamescope-session-plus/bootstrap_steam.tar.gz" # pretty big archive, which is only useful for the first boot
 
   - type: files
     files:
@@ -32,6 +30,13 @@ modules:
       - "Mullvad VPN"
     install:
       - mullvad-vpn
+    remove:
+      - waydroid
+      - waydroid-selinux
+  
+  - type: script
+    scripts:
+      - removewaydroid.sh
 
   - type: systemd
     system:
