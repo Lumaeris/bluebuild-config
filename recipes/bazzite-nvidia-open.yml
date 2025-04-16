@@ -7,7 +7,7 @@ description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/bazzite-nvidia-open
-image-version: 41
+image-version: stable
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -20,7 +20,8 @@ modules:
   - type: rpm-ostree
     repos:
       - https://repository.mullvad.net/rpm/stable/mullvad.repo
-      - https://download.docker.com/linux/fedora/docker-ce.repo
+      #- https://download.docker.com/linux/fedora/docker-ce.repo
+      - docker-ce.repo
     keys:
       - https://repository.mullvad.net/rpm/mullvad-keyring.asc
       - https://download.docker.com/linux/fedora/gpg
