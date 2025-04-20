@@ -33,13 +33,9 @@ modules:
       - containerd.io
       - docker-buildx-plugin
       - docker-compose-plugin
-    remove:
-      - waydroid
-      - waydroid-selinux
   
   - type: script
     scripts:
-      - removewaydroid.sh
       - installfdm.sh
     snippets:
       - "echo 'import \"/usr/share/ublue-os/just/65-lumaeris.just\"' >> /usr/share/ublue-os/justfile"
