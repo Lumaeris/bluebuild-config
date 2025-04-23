@@ -33,6 +33,7 @@ modules:
       - containerd.io
       - docker-buildx-plugin
       - docker-compose-plugin
+      - https://github.com/GloriousEggroll/flatpost/releases/download/1.0.5/flatpost-1.0.5.fc41.rpm
   
   - type: script
     scripts:
