@@ -20,8 +20,13 @@ modules:
   - type: dnf
     repos:
       files:
-        - https://repository.mullvad.net/rpm/stable/mullvad.repo
-        - https://download.docker.com/linux/fedora/docker-ce.repo
+        add:
+          - https://repository.mullvad.net/rpm/stable/mullvad.repo
+          - https://download.docker.com/linux/fedora/docker-ce.repo
+        remove:
+          - terra
+          - terra-extras
+          - terra-mesa
       keys:
         - https://repository.mullvad.net/rpm/mullvad-keyring.asc
         - https://download.docker.com/linux/fedora/gpg
