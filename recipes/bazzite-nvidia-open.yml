@@ -16,31 +16,36 @@ modules:
     files:
       - source: system/main
         destination: /
-  
+
+  - type: dnf
+    repos:
+      files:
+        add:
+          - https://repository.mullvad.net/rpm/stable/mullvad.repo
+          - https://download.docker.com/linux/fedora/docker-ce.repo
+        remove:
+          - terra
+          - terra-extras
+      keys:
+        - https://repository.mullvad.net/rpm/mullvad-keyring.asc
+        - https://download.docker.com/linux/fedora/gpg
+    optfix:
+      - "Mullvad VPN"
+    install:
+      packages:
+        - mullvad-vpn
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+        - docker-buildx-plugin
+        - docker-compose-plugin
+        - https://github.com/GloriousEggroll/flatpost/releases/download/1.0.5/flatpost-1.0.5.fc41.rpm
+
   - type: script
     scripts:
       - installfdm.sh
     snippets:
       - "echo 'import \"/usr/share/ublue-os/just/65-lumaeris.just\"' >> /usr/share/ublue-os/justfile"
-      - "rm -rf /etc/yum.repos.d/terra*"
-
-  - type: rpm-ostree
-    repos:
-      - https://repository.mullvad.net/rpm/stable/mullvad.repo
-      - https://download.docker.com/linux/fedora/docker-ce.repo
-    keys:
-      - https://repository.mullvad.net/rpm/mullvad-keyring.asc
-      - https://download.docker.com/linux/fedora/gpg
-    optfix:
-      - "Mullvad VPN"
-    install:
-      - mullvad-vpn
-      - docker-ce
-      - docker-ce-cli
-      - containerd.io
-      - docker-buildx-plugin
-      - docker-compose-plugin
-      - https://github.com/GloriousEggroll/flatpost/releases/download/1.0.5/flatpost-1.0.5.fc41.rpm
 
   - type: systemd
     system:
