@@ -16,6 +16,13 @@ modules:
     files:
       - source: system/main
         destination: /
+  
+  - type: script
+    scripts:
+      - installfdm.sh
+    snippets:
+      - "echo 'import \"/usr/share/ublue-os/just/65-lumaeris.just\"' >> /usr/share/ublue-os/justfile"
+      - "rm -rf /etc/yum.repos.d/terra*"
 
   - type: rpm-ostree
     repos:
@@ -34,12 +41,6 @@ modules:
       - docker-buildx-plugin
       - docker-compose-plugin
       - https://github.com/GloriousEggroll/flatpost/releases/download/1.0.5/flatpost-1.0.5.fc41.rpm
-  
-  - type: script
-    scripts:
-      - installfdm.sh
-    snippets:
-      - "echo 'import \"/usr/share/ublue-os/just/65-lumaeris.just\"' >> /usr/share/ublue-os/justfile"
 
   - type: systemd
     system:
