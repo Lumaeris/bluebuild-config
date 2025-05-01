@@ -1,5 +1,8 @@
 # Lumaeris' BlueBuild Config &nbsp; [![bluebuild build badge](https://github.com/Lumaeris/bluebuild-config/actions/workflows/build.yml/badge.svg)](https://github.com/Lumaeris/bluebuild-config/actions/workflows/build.yml)
 
+> [!WARNING]
+> Deprecated. The included utilities I simply don't use anymore except for Docker, which is the reason I'll rebase to [Bazzite DX](https://dev.bazzite.gg/).
+
 This repository contains a recipe for [BlueBuild](https://blue-build.org/) that does a build based on my preferences.
 
 This is based on the [Universal Blue's](https://universal-blue.org/) [`bazzite-nvidia-open`](https://github.com/ublue-os/bazzite/pkgs/container/bazzite-nvidia-open) image, which contains NVIDIA driver with open-source modules that only supports NVIDIA RTX or NVIDIA GTX 16xx+ Series. Not recommended for use as is, while still allowing you to explore this repository.
